@@ -1,138 +1,109 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- ========================================= -->
-    <!-- CONFIGURAÇÕES DA PÁGINA -->
-    <!-- ========================================= -->
+  <title>iPhone Compare Brasil — Encontre o seu próximo iPhone</title>
 
-    <meta charset="UTF-8">
+  <meta
+    name="description"
+    content="Compare iPhones de 12 a 18: câmeras, bateria, desempenho e preços informativos."
+  >
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="iPhone Compare Brasil">
+  <meta
+    property="og:description"
+    content="Todos os detalhes. A sua melhor escolha. Compare até três iPhones lado a lado."
+  >
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
 
-    <meta name="description"
-        content="Comparador completo de iPhones da Apple">
-
-    <meta name="keywords"
-        content="iphone, apple, comparação, iphone 12, iphone 13, iphone 14">
-
-    <meta name="author"
-        content="Pedro Lima Constantino, Ryan Dantas, Pedro Chaguri, Guilherme Ferraz e Alex Pessin">
- <title>iPhone Compare Brasil</title>
-
-    <!-- CSS EXTERNO -->
-    <link rel="stylesheet" href="style.css">
-
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+  <!-- CABEÇALHO -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a
+        href="#inicio"
+        class="brand"
+        aria-label="iPhone Compare Brasil, início"
+      >
+        <span data-icon="phone"></span>
+        <span>iPhone Compare <span>Brasil</span></span>
+      </a>
 
-    <!-- ========================================= -->
-    <!-- CABEÇALHO -->
-    <!-- ========================================= -->
+      <nav id="main-nav" aria-label="Menu principal">
+        <a href="#modelos" class="active">Modelos</a>
+        <a href="#comparador">Comparador</a>
+        <a href="#destaques">Destaques</a>
+        <a href="#sobre">Sobre o projeto</a>
+      </nav>
 
-    <header class="header" id="inicio">
+      <a href="#comparador" class="header-action">
+        <span data-icon="compare"></span>
+        Comparar
+        <span class="count" id="header-count">0</span>
+      </a>
 
-        <div class="logo">
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        aria-label="Abrir menu"
+        aria-controls="main-nav"
+        aria-expanded="false"
+      >
+        <span data-icon="menu"></span>
+      </button>
+    </div>
+  </header>
 
-            <h1>iPhone Compare Brasil</h1>
+  <main>
+    <!-- BANNER PRINCIPAL -->
+    <section class="hero" id="inicio">
+      <img
+        class="hero-photo"
+        src="https://id-preview--e52d31b9-c169-5640-92e9-8c528189f975.lovable.app/__l5e/assets-v1/2ebca561-fa2a-4c3c-8865-ed2815634c4b/iphone-banner.jpg"
+        alt="Composição ilustrativa de iPhones em acabamento metálico"
+        width="1920"
+        height="1024"
+      >
 
-        </div>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <div class="eyebrow">
+            <span class="dot"></span>
+            SEU PRÓXIMO IPHONE COMEÇA AQUI
+          </div>
 
-        <nav class="menu">
+          <h1>
+            Compare iPhones.<br>
+            <span>Escolha o seu.</span>
+          </h1>
 
-            <ul>
+          <p>
+            Compare gerações, descubra os detalhes e encontre
+            o iPhone que combina com você.
+          </p>
 
-                <li>
-                    <a href="#inicio">
-                        Início
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#modelos">
-                        Modelos
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#comparador">
-                        Comparador
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#precos">
-                        Preços
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#galeria">
-                        Galeria
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#faq">
-                        FAQ
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#contato">
-                        Contato
-                    </a>
-                </li>
-
-            </ul>
-
-        </nav>
-
-    </header>
-    <!-- ========================================= -->
-    <!-- HERO -->
-    <!-- ========================================= -->
-
-    <section class="hero">
-
-        <div class="hero-conteudo">
-
-            <h2>
-                Compare todos os modelos de iPhone
-            </h2>
-
-            <p>
-
-                Encontre o iPhone ideal para você
-                comparando preços, especificações,
-                câmeras, desempenho e muito mais.
-
-            </p>
-
-            <a href="#comparador"
-                class="botao-principal">
-
-                Comparar Agora
-
+          <div class="hero-actions">
+            <a class="btn" href="#modelos">
+              Começar a comparar
+              <span data-icon="arrow"></span>
             </a>
 
+            <a class="text-link" href="#modelos">
+              Explorar modelos
+              <span data-icon="chevron"></span>
+            </a>
+          </div>
+
+          <div class="hero-note">
+            <span data-icon="check"></span>
+            Independente. Gratuito. Feito para ajudar você.
+          </div>
         </div>
-
+      </div>
     </section>
-    <!-- ========================================= -->
-    <!-- PESQUISA -->
-    <!-- ========================================= -->
-
-    <section class="pesquisa">
-
-        <h2>
-            Buscar Modelo
-        </h2>
-
-        <input
-            type="text"
-            id="campoBusca"
-            placeholder="Digite um modelo">
-            
-             </section>
