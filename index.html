@@ -792,4 +792,28 @@
         image: images[id] || images["18-pro"]
       };
     });
+/* =====================================================
+       4. ESTADO TEMPORÁRIO DA PÁGINA
+
+       Não usamos banco de dados, cookies ou localStorage.
+       A seleção é reiniciada ao recarregar a página.
+       ===================================================== */
+
+    let selected = [];
+    let generation = "all";
+    let query = "";
+    let sort = "default";
+    let toastTimer;
+
+    function getModel(id) {
+      return models.find(model => model.id === id);
+    }
+
+    function normalize(text) {
+      return text
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
+    }
+
 
