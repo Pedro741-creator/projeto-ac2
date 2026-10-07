@@ -864,3 +864,123 @@
 
       return result;
     }
+/* =====================================================
+       6. CRIAÇÃO DOS CARDS
+       ===================================================== */
+
+    function renderCatalog() {
+      const result = filteredModels();
+
+      $("model-count").textContent =
+        `${result.length} ${result.length === 1 ? "modelo" : "modelos"}`;
+
+      if (result.length === 0) {
+        $("catalog").innerHTML = `
+          <div class="empty-results">
+            Nenhum iPhone encontrado.
+            Tente outro nome ou geração.
+          </div>
+        `;
+        return;
+      }
+
+      $("catalog").innerHTML = result.map(model => {
+        const chosen = selected.includes(model.id);
+
+        let badge = "Essencial";
+
+        if (!model.confirmed) {
+          badge = "Não confirmado";
+        } else if (model.generation === 18) {
+          badge = "Novo";
+        } else if (model.id === "13") {
+          badge = "Custo-benefício";
+        } else if (model.name.includes("Pro")) {
+          badge = "Linha Pro";
+        }
+
+        const badgeClass = !model.confirmed
+          ? "warning"
+          : model.generation < 18
+            ? "neutral"
+            : "";
+
+        const imageDescription = model.confirmed
+          ? `Imagem da família ${model.name}`
+          : `Imagem ilustrativa para ${model.name}`;
+
+        const cardSpec = model.confirmed
+          ? `${model.chip} · ${model.screen.split(" · ")[0]}`
+          : "Sem especificações oficiais";
+
+        return `
+          <article class="phone-card ${chosen ? "selected" : ""}">
+            <div class="card-top">
+              <span class="badge ${badgeClass}">
+                ${badge}
+              </span>
+
+              <span class="card-year">
+                ${model.confirmed ? model.year : "—"}
+              </span>
+            </div>
+
+            <div class="phone-image">
+              <img
+                src="${model.image}"
+                alt="${imageDescription}"
+                loading="lazy"
+                width="260"
+                height="190"
+              >
+            </div>
+
+            <div class="swatches" aria-hidden="true">
+              <span class="swatch dark"></span>
+              <span class="swatch silver"></span>
+              <span class="swatch blue"></span>
+              <span class="swatch green"></span>
+            </div>
+
+            <h3>${model.name}</h3>
+
+            <div class="card-spec">
+              ${cardSpec}
+            </div>
+
+            <p class="price-label">
+              ${
+                model.price == null
+                  ? "Preço de referência"
+                  : "A partir de · preço ilustrativo"
+              }
+            </p>
+
+            <p class="price ${model.price == null ? "unknown" : ""}">
+              ${money(model.price)}
+            </p>
+
+            <div class="card-actions">
+              <button
+                class="compare-button"
+                data-compare="${model.id}"
+                aria-pressed="${chosen}"
+                aria-label="${chosen ? "Remover" : "Comparar"} ${model.name}"
+              >
+                ${icon(chosen ? "check" : "plus")}
+                ${chosen ? "Selecionado" : "Comparar"}
+              </button>
+
+              <button
+                class="details-button"
+                data-details="${model.id}"
+                aria-label="Detalhes de ${model.name}"
+              >
+                Detalhes
+                ${icon("chevron")}
+              </button>
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
