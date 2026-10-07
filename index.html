@@ -1352,3 +1352,40 @@
       renderCatalog();
       renderComparison();
     });
+/* =====================================================
+       11. MENU RESPONSIVO
+       ===================================================== */
+
+    $("menu-toggle").addEventListener("click", () => {
+      const open = $("main-nav").classList.toggle("open");
+
+      $("menu-toggle").setAttribute(
+        "aria-expanded",
+        String(open)
+      );
+
+      $("menu-toggle").setAttribute(
+        "aria-label",
+        open ? "Fechar menu" : "Abrir menu"
+      );
+    });
+
+    $("main-nav").addEventListener("click", event => {
+      if (!(event.target instanceof Element)) {
+        return;
+      }
+
+      if (event.target.closest("a")) {
+        $("main-nav").classList.remove("open");
+
+        $("menu-toggle").setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+        $("menu-toggle").setAttribute(
+          "aria-label",
+          "Abrir menu"
+        );
+      }
+    });
