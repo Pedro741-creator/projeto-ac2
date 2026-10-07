@@ -352,3 +352,47 @@
       <span data-icon="arrow"></span>
     </a>
   </div>
+  <!-- VOLTAR AO TOPO -->
+  <button
+    class="back-top"
+    id="back-top"
+    aria-label="Voltar ao topo"
+    hidden
+  >
+    <span data-icon="up"></span>
+  </button>
+
+  <!-- MENSAGENS -->
+  <div
+    class="toast"
+    id="toast"
+    role="status"
+    aria-live="polite"
+    hidden
+  ></div>
+
+  <!-- JANELA DE DETALHES -->
+  <dialog
+    id="details-dialog"
+    aria-labelledby="details-title"
+  >
+    <button
+      class="icon-button dialog-close"
+      id="close-dialog"
+      aria-label="Fechar detalhes"
+    >
+      <span data-icon="close"></span>
+    </button>
+
+    <div id="details-content"></div>
+  </dialog>
+
+  <noscript>
+    Ative JavaScript no navegador para visualizar o catálogo
+    e comparar os modelos.
+  </noscript>
+
+  <!-- TODO O JAVASCRIPT ESTÁ INCORPORADO NESTE ARQUIVO. -->
+  <script>
+    "use strict";
+
