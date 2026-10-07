@@ -1389,3 +1389,31 @@
         );
       }
     });
+ /* =====================================================
+       12. FECHAMENTO DOS DETALHES
+       O elemento dialog também fecha com a tecla Escape.
+       ===================================================== */
+
+    $("close-dialog").addEventListener("click", () => {
+      $("details-dialog").close();
+    });
+
+    $("details-dialog").addEventListener("click", event => {
+      const dialog = $("details-dialog");
+
+      if (event.target !== dialog) {
+        return;
+      }
+
+      const rect = dialog.getBoundingClientRect();
+
+      const clickedOutside =
+        event.clientX < rect.left ||
+        event.clientX > rect.right ||
+        event.clientY < rect.top ||
+        event.clientY > rect.bottom;
+
+      if (clickedOutside) {
+        dialog.close();
+      }
+    });
