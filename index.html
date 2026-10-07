@@ -145,3 +145,97 @@
             28 modelos
           </span>
         </div>
+ <!-- FILTROS, BUSCA E ORDENAÇÃO -->
+        <div class="catalog-toolbar">
+          <div
+            class="generations"
+            id="generation-filters"
+            role="group"
+            aria-label="Filtrar por geração"
+          >
+            <button
+              class="filter active"
+              data-generation="all"
+              aria-pressed="true"
+            >
+              Todos
+            </button>
+          </div>
+
+          <div class="search-sort">
+            <label class="search-field">
+              <span data-icon="search"></span>
+
+              <input
+                id="search"
+                type="search"
+                placeholder="Buscar modelo"
+                aria-label="Buscar modelo"
+              >
+            </label>
+
+            <select
+              id="sort"
+              class="sort-select"
+              aria-label="Ordenar modelos"
+            >
+              <option value="default">Ordenar: geração</option>
+              <option value="price-asc">Menor preço</option>
+              <option value="price-desc">Maior preço</option>
+              <option value="performance">Maior desempenho</option>
+              <option value="year-desc">Mais recentes</option>
+              <option value="year-asc">Mais antigos</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Os cards são gerados pelo JavaScript. -->
+        <div class="catalog-grid" id="catalog"></div>
+
+        <p class="catalog-note">
+          Preços são exemplos informativos em reais, não ofertas ou
+          cotações atuais; variam conforme armazenamento, estado e
+          vendedor. A lista preserva os 28 nomes solicitados para
+          este projeto acadêmico. iPhone 17 Plus, iPhone 18 e
+          iPhone 18 Plus não possuem dados oficiais confirmados
+          neste catálogo e usam imagem ilustrativa. Algumas fotos
+          mostram a família do aparelho, não uma cor ou variante
+          específica.
+        </p>
+      </div>
+    </section>
+
+    <!-- COMPARADOR -->
+    <section
+      class="section comparison-section"
+      id="comparador"
+    >
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">OS DETALHES IMPORTAM</div>
+            <h2>Compare. Descubra. Escolha.</h2>
+            <p>Até três iPhones, lado a lado.</p>
+          </div>
+
+          <button
+            class="text-link clear-button"
+            id="clear-comparison"
+            hidden
+          >
+            <span data-icon="trash"></span>
+            Limpar comparação
+          </button>
+        </div>
+
+        <div
+          class="comparison-slots"
+          id="comparison-slots"
+        ></div>
+
+        <div
+          class="table-wrap"
+          id="comparison-table"
+        ></div>
+      </div>
+    </section>
