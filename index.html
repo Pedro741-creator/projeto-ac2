@@ -984,3 +984,194 @@
         `;
       }).join("");
     }
+  /* =====================================================
+       7. COMPARAÇÃO DINÂMICA
+       ===================================================== */
+
+    function showToast(text) {
+      clearTimeout(toastTimer);
+
+      $("toast").textContent = text;
+      $("toast").hidden = false;
+
+      toastTimer = setTimeout(() => {
+        $("toast").hidden = true;
+      }, 3500);
+    }
+
+    function toggleCompare(id) {
+      if (!getModel(id)) {
+        return;
+      }
+
+      if (selected.includes(id)) {
+        selected = selected.filter(item => item !== id);
+      } else {
+        if (selected.length >= MAX_COMPARE) {
+          showToast(
+            "Você pode comparar até 3 iPhones. " +
+            "Remova um para adicionar outro."
+          );
+          return;
+        }
+
+        selected.push(id);
+      }
+
+      renderCatalog();
+      renderComparison();
+    }
+
+    const specs = [
+      ["screen", "Tela"],
+      ["chip", "Processador"],
+      ["ram", "RAM¹"],
+      ["storage", "Armazenamento"],
+      ["camera", "Câmeras traseiras"],
+      ["battery", "Bateria · reprodução de vídeo²"],
+      ["os", "Sistema no lançamento"],
+      ["year", "Ano de lançamento"],
+      ["price", "Preço ilustrativo"]
+    ];
+
+    function specValue(model, key) {
+      if (key === "price") {
+        return money(model.price);
+      }
+
+      if (key === "battery") {
+        if (model.battery == null) {
+          return unknown;
+        }
+
+        const regionalNote =
+          model.generation >= 17 ? " (versão eSIM)" : "";
+
+        return `Até model.batteryhoras{regionalNote}`;
+      }
+
+      if (key === "year" && !model.confirmed) {
+        return unknown;
+      }
+
+      return model[key];
+    }
+
+    function renderComparison() {
+      const chosen = selected
+        .map(getModel)
+        .filter(Boolean);
+
+      $("header-count").textContent = chosen.length;
+      $("clear-comparison").hidden = chosen.length === 0;
+
+      $("comparison-slots").innerHTML = Array.from(
+        { length: MAX_COMPARE },
+        (_, index) => {
+          const model = chosen[index];
+
+          if (!model) {
+            return `
+              <a
+                class="comparison-slot empty"
+                href="#modelos"
+              >
+                ${icon("plus")}
+                <span>Adicionar iPhone ${index + 1}</span>
+              </a>
+            `;
+          }
+
+          return `
+            <div class="comparison-slot">
+              <button
+                class="icon-button"
+                data-compare="${model.id}"
+                aria-label="Remover ${model.name}"
+              >
+                ${icon("close")}
+              </button>
+
+              <img
+                src="${model.image}"
+                alt="${model.name}"
+                width="75"
+                height="100"
+              >
+
+              <div>
+                <h3>${model.name}</h3>
+                <p>${money(model.price)}</p>
+              </div>
+            </div>
+          `;
+        }
+      ).join("");
+
+      if (chosen.length === 0) {
+        $("comparison-table").innerHTML = `
+          <p class="comparison-empty">
+            Escolha seus favoritos no catálogo para ver
+            todas as especificações aqui.
+          </p>
+        `;
+      } else {
+        const tableHeaders = chosen.map(model => `
+          <th scope="col">${model.name}</th>
+        `).join("");
+
+        const tableRows = specs.map(([key, label]) => {
+          const cells = chosen.map(model => `
+            <td>${specValue(model, key)}</td>
+          `).join("");
+
+          return `
+            <tr>
+              <th scope="row">${label}</th>
+              ${cells}
+            </tr>
+          `;
+        }).join("");
+
+        $("comparison-table").innerHTML = `
+          <table class="comparison-table">
+            <caption class="comparison-empty">
+              Especificações técnicas
+            </caption>
+
+            <thead>
+              <tr>
+                <th scope="col">Características</th>
+                ${tableHeaders}
+              </tr>
+            </thead>
+
+            <tbody>
+              ${tableRows}
+            </tbody>
+          </table>
+
+          <p class="catalog-note">
+            ¹ RAM de 12 a 16: referência de terceiros.
+            ² Autonomia máxima divulgada pela Apple;
+            pode variar por versão regional e uso.
+            Consulte as notas do fabricante.
+          </p>
+        `;
+      }
+
+      $("compare-dock").hidden = chosen.length === 0;
+
+      $("dock-count").textContent =
+        `${chosen.length} de 3 selecionados`;
+
+      $("dock-thumbs").innerHTML = chosen.map(model => `
+        <img
+          src="${model.image}"
+          alt="${model.name}"
+          width="28"
+          height="35"
+        >
+      `).join("");
+    }
+
