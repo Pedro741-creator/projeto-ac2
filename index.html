@@ -494,7 +494,8 @@
         maximumFractionDigits: 0
       }).format(value);
     }
- 2. DADOS ESTÁTICOS DOS APARELHOS
+   /* =====================================================
+       2. DADOS ESTÁTICOS DOS APARELHOS
 
        Ordem de cada linha:
        id, nome, geração, preço ilustrativo, tela, chip,
@@ -502,7 +503,9 @@
        sistema operacional de lançamento.
 
        null = dado ausente.
-       Os preços não são ofertas nem cotações atuais
+       Os preços não são ofertas nem cotações atuais.
+       ===================================================== */
+
 
     const rows = [
       [
@@ -671,4 +674,122 @@
         "48 MP principal · abertura variável", 45, "iOS 27"
       ]
     ];
+/* =====================================================
+       3. IMAGENS PÚBLICAS
+
+       Cada card e janela de detalhes recebe uma imagem.
+       Algumas variantes compartilham a foto da família.
+       Modelos não confirmados usam imagem ilustrativa.
+       ===================================================== */
+
+    const images = {
+      "12":
+        "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111876_sp830-iphone12-ios14-2x.png",
+
+      "12-mini":
+        "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111877_sp829-iphone12mini--ios14.png",
+
+      "12-pro":
+        "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111875_iphone12pro-ios14.png",
+
+      "13":
+        "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111872_iphone13-colors-480.png",
+
+      "13-mini":
+        "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111872_iphone13-mini-colors-480.png",
+
+      "13-pro":
+        "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111871_iphone13-pro-colors-480.png",
+
+      "13-pro-max":
+        "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111870_iphone13-pro-max-colors-480.png",
+
+      "14":
+        "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111850_iphone-14_1.png",
+
+      "14-pro":
+        "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111846_sp875-sp876-iphone14-pro-promax.png",
+
+      "15":
+        "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/iphone_15_hero.png",
+
+      "15-plus":
+        "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/iphone_15_plus_hero.png",
+
+      "15-pro":
+        "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/iphone_15_pro.png",
+
+      "15-pro-max":
+        "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/iphone-15-pro-max.png",
+
+      "16":
+        "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/iphone-16.png",
+
+      "16-plus":
+        "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/121030-iphone-16-plus.png",
+
+      "16-pro":
+        "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/121031-iphone-16-pro.png",
+
+      "16-pro-max":
+        "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/121032-iphone-16-pro-max.png",
+
+      "17":
+        "https://www.apple.com/newsroom/images/2025/09/apple-debuts-iphone-17/article/Apple-iPhone-17-hero-250909_inline.jpg.large.jpg",
+
+      "17-pro":
+        "https://www.apple.com/newsroom/images/2025/09/apple-unveils-iphone-17-pro-and-iphone-17-pro-max/article/Apple-iPhone-17-Pro-hero-250909_inline.jpg.large.jpg",
+
+      "18-pro":
+        "https://www.apple.com/newsroom/images/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/article/Apple-iPhone-18-Pro-2up-260909_inline.jpg.large.jpg"
+    };
+
+    // Fotos compartilhadas entre variantes da mesma família.
+    images["12-pro-max"] = images["12-pro"];
+    images["14-plus"] = images["14"];
+    images["14-pro-max"] = images["14-pro"];
+    images["17-plus"] = images["17"];
+    images["17-pro-max"] = images["17-pro"];
+    images["18"] = images["18-pro"];
+    images["18-plus"] = images["18-pro"];
+    images["18-pro-max"] = images["18-pro"];
+
+    // Índice usado apenas para ordenar a geração dos chips.
+    // Não representa um resultado de benchmark.
+    const chips = {
+      "A14 Bionic": 14,
+      "A15 Bionic": 15,
+      "A16 Bionic": 16,
+      "A17 Pro": 17.5,
+      "A18": 18,
+      "A18 Pro": 18.5,
+      "A19": 19,
+      "A19 Pro": 19.5,
+      "A20 Pro": 20.5
+    };
+
+    const models = rows.map(row => {
+      const [
+        id, name, generation, price, screen, chip,
+        ram, storage, camera, battery, os
+      ] = row;
+
+      return {
+        id,
+        name,
+        generation,
+        price,
+        screen,
+        chip,
+        ram,
+        storage,
+        camera,
+        battery,
+        os,
+        year: generation + 2008,
+        performance: chips[chip] || 0,
+        confirmed: chip !== unknown,
+        image: images[id] || images["18-pro"]
+      };
+    });
 
