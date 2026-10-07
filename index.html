@@ -1417,3 +1417,26 @@
         dialog.close();
       }
     });
+/* =====================================================
+       13. VOLTAR AO TOPO
+       ===================================================== */
+
+    $("back-top").addEventListener("click", () => {
+      const reducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+      window.scrollTo({
+        top: 0,
+        behavior: reducedMotion ? "instant" : "smooth"
+      });
+    });
+
+    window.addEventListener(
+      "scroll",
+      () => {
+        $("back-top").hidden = window.scrollY < 600;
+      },
+      { passive: true }
+    );
+
