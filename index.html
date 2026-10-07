@@ -1175,3 +1175,84 @@
       `).join("");
     }
 
+ /* =====================================================
+       8. JANELA DE DETALHES
+       ===================================================== */
+
+    function openDetails(id) {
+      const model = getModel(id);
+
+      if (!model) {
+        return;
+      }
+
+      const dialog = $("details-dialog");
+
+      const detailsSpecs = specs.map(([key, label]) => `
+        <div class="spec-item">
+          <dt>${label}</dt>
+          <dd>${specValue(model, key)}</dd>
+        </div>
+      `).join("");
+
+      const chosen = selected.includes(id);
+
+      $("details-content").innerHTML = `
+        <div class="detail-header">
+          <img
+            src="${model.image}"
+            alt="${model.confirmed ? model.name : "Imagem ilustrativa"}"
+            width="180"
+            height="220"
+          >
+
+          <div>
+            <span class="badge ${model.confirmed ? "" : "warning"}">
+              ${
+                model.confirmed
+                  ? `Geração ${model.generation}`
+                  : "Modelo não confirmado"
+              }
+            </span>
+
+            <h2 id="details-title">${model.name}</h2>
+
+            <p>
+              ${
+                model.confirmed
+                  ? "Especificações de referência"
+                  : "Nome incluído a pedido para fins acadêmicos."
+              }
+            </p>
+
+            <div class="price">
+              ${money(model.price)}
+            </div>
+          </div>
+        </div>
+
+        <dl class="spec-list">
+          ${detailsSpecs}
+        </dl>
+
+        <button
+          class="btn"
+          data-compare="${model.id}"
+        >
+          ${icon(chosen ? "check" : "plus")}
+          ${
+            chosen
+              ? "Remover da comparação"
+              : "Adicionar à comparação"
+          }
+        </button>
+
+        <p class="image-caption">
+          Imagem da Apple; pode representar a família do modelo.
+          Preço meramente ilustrativo, sem oferta comercial.
+        </p>
+      `;
+
+      dialog.showModal();
+    }
+
