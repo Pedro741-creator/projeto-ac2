@@ -127,3 +127,90 @@ h3 {
   width: min(1200px, calc(100% - 80px));
   margin: auto;
 }
+/* =====================================================
+   CABEÇALHO E NAVEGAÇÃO
+   ===================================================== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: var(--background);
+  background: color-mix(
+    in srgb,
+    var(--background) 94%,
+    transparent
+  );
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 18px;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.brand svg {
+  height: 29px;
+  width: 22px;
+  stroke-width: 1.8;
+}
+
+.brand span span {
+  color: var(--primary);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 31px;
+}
+
+nav > a {
+  font-size: 13px;
+  color: var(--muted-foreground);
+  transition: color 0.2s;
+}
+
+nav > a:hover,
+nav > a.active {
+  color: var(--foreground);
+}
+
+.header-action {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.count {
+  background: var(--accent);
+  color: var(--primary);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  width: 23px;
+  height: 23px;
+  font-size: 11px;
+}
+
+.menu-toggle {
+  display: none;
+  background: transparent;
+  color: var(--foreground);
+  padding: 8px;
+}
