@@ -1264,4 +1264,33 @@
 
       dialog.showModal();
     }
+/* =====================================================
+       9. EVENTOS DOS CARDS
 
+       Delegação de eventos permite que os botões continuem
+       funcionando após a recriação dos cards.
+       ===================================================== */
+
+    document.addEventListener("click", event => {
+      if (!(event.target instanceof Element)) {
+        return;
+      }
+
+      const compareButton =
+        event.target.closest("[data-compare]");
+
+      const detailsButton =
+        event.target.closest("[data-details]");
+
+      if (compareButton) {
+        toggleCompare(compareButton.dataset.compare);
+
+        if ($("details-dialog").open) {
+          $("details-dialog").close();
+        }
+      }
+
+      if (detailsButton) {
+        openDetails(detailsButton.dataset.details);
+      }
+    });
