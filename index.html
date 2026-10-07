@@ -1294,3 +1294,61 @@
         openDetails(detailsButton.dataset.details);
       }
     });
+     /* =====================================================
+       10. BOTÕES DE GERAÇÃO
+       ===================================================== */
+
+    for (let number = 12; number <= 18; number++) {
+      $("generation-filters").insertAdjacentHTML(
+        "beforeend",
+        `
+          <button
+            class="filter"
+            data-generation="${number}"
+            aria-pressed="false"
+          >
+            iPhone ${number}
+          </button>
+        `
+      );
+    }
+
+    $("generation-filters").addEventListener("click", event => {
+      if (!(event.target instanceof Element)) {
+        return;
+      }
+
+      const button =
+        event.target.closest("[data-generation]");
+
+      if (!button) {
+        return;
+      }
+
+      generation = button.dataset.generation;
+
+      document.querySelectorAll("[data-generation]").forEach(element => {
+        const active = element === button;
+
+        element.classList.toggle("active", active);
+        element.setAttribute("aria-pressed", String(active));
+      });
+
+      renderCatalog();
+    });
+
+    $("search").addEventListener("input", event => {
+      query = event.target.value;
+      renderCatalog();
+    });
+
+    $("sort").addEventListener("change", event => {
+      sort = event.target.value;
+      renderCatalog();
+    });
+
+    $("clear-comparison").addEventListener("click", () => {
+      selected = [];
+      renderCatalog();
+      renderComparison();
+    });
