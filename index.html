@@ -1440,3 +1440,63 @@
       { passive: true }
     );
 
+ /* =====================================================
+       14. DESTAQUES EDITORIAIS
+       ===================================================== */
+
+    const highlights = [
+      [
+        "camera",
+        "Melhor câmera",
+        "18-pro",
+        "Abertura variável na câmera principal. Mais controle criativo."
+      ],
+      [
+        "battery",
+        "Melhor bateria",
+        "18-pro-max",
+        "Até 45 horas de vídeo na versão eSIM, segundo a Apple."
+      ],
+      [
+        "value",
+        "Melhor custo-benefício",
+        "13",
+        "A15 Bionic e câmera dupla, com preço ilustrativo acessível."
+      ],
+      [
+        "chip",
+        "Melhor desempenho",
+        "18-pro",
+        "A20 Pro: a geração mais recente de chip deste catálogo."
+      ]
+    ];
+
+    $("highlights").innerHTML = highlights.map(
+      ([symbol, title, id, text]) => {
+        const model = getModel(id);
+
+        if (!model) {
+          return "";
+        }
+
+        return `
+          <article class="highlight">
+            <div class="highlight-icon">
+              ${icon(symbol)}
+            </div>
+
+            <h3>${title}</h3>
+            <strong>${model.name}</strong>
+            <p>${text}</p>
+
+            <button
+              class="details-button"
+              data-details="${id}"
+            >
+              Conhecer modelo
+              ${icon("chevron")}
+            </button>
+          </article>
+        `;
+      }
+    ).join("");
