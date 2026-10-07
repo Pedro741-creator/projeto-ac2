@@ -815,5 +815,52 @@
         .normalize("NFD")
         .replace(/[\u0300-\u036f]/g, "");
     }
+ /* =====================================================
+       5. FILTROS E ORDENAÇÃO
+       ===================================================== */
 
+    function filteredModels() {
+      const result = models.filter(model => {
+        const matchesGeneration =
+          generation === "all" ||
+          model.generation === Number(generation);
 
+        const matchesSearch =
+          normalize(model.name).includes(normalize(query));
+
+        return matchesGeneration && matchesSearch;
+      });
+
+      result.sort((a, b) => {
+        if (sort.startsWith("price")) {
+          // Modelos sem preço ficam ao final da lista.
+          if (a.price == null) {
+            return b.price == null ? 0 : 1;
+          }
+
+          if (b.price == null) {
+            return -1;
+          }
+
+          return sort === "price-asc"
+            ? a.price - b.price
+            : b.price - a.price;
+        }
+
+        if (sort === "performance") {
+          return b.performance - a.performance;
+        }
+
+        if (sort === "year-desc") {
+          return b.year - a.year;
+        }
+
+        if (sort === "year-asc") {
+          return a.year - b.year;
+        }
+
+        return a.generation - b.generation;
+      });
+
+      return result;
+    }
