@@ -494,4 +494,181 @@
         maximumFractionDigits: 0
       }).format(value);
     }
+ 2. DADOS ESTÁTICOS DOS APARELHOS
+
+       Ordem de cada linha:
+       id, nome, geração, preço ilustrativo, tela, chip,
+       RAM, armazenamento, câmeras, horas de vídeo,
+       sistema operacional de lançamento.
+
+       null = dado ausente.
+       Os preços não são ofertas nem cotações atuais
+
+    const rows = [
+      [
+        "12", "iPhone 12", 12, 2199,
+        "6,1″ OLED · 60 Hz", "A14 Bionic", "4 GB",
+        "64 / 128 / 256 GB",
+        "12 MP + 12 MP", 17, "iOS 14"
+      ],
+      [
+        "12-mini", "iPhone 12 Mini", 12, 1899,
+        "5,4″ OLED · 60 Hz", "A14 Bionic", "4 GB",
+        "64 / 128 / 256 GB",
+        "12 MP + 12 MP", 15, "iOS 14"
+      ],
+      [
+        "12-pro", "iPhone 12 Pro", 12, 2799,
+        "6,1″ OLED · 60 Hz", "A14 Bionic", "6 GB",
+        "128 / 256 / 512 GB",
+        "12 MP + 12 MP + 12 MP · LiDAR", 17, "iOS 14"
+      ],
+      [
+        "12-pro-max", "iPhone 12 Pro Max", 12, 3299,
+        "6,7″ OLED · 60 Hz", "A14 Bionic", "6 GB",
+        "128 / 256 / 512 GB",
+        "12 MP + 12 MP + 12 MP · LiDAR", 20, "iOS 14"
+      ],
+      [
+        "13", "iPhone 13", 13, 2799,
+        "6,1″ OLED · 60 Hz", "A15 Bionic", "4 GB",
+        "128 / 256 / 512 GB",
+        "12 MP + 12 MP", 19, "iOS 15"
+      ],
+      [
+        "13-mini", "iPhone 13 Mini", 13, 2499,
+        "5,4″ OLED · 60 Hz", "A15 Bionic", "4 GB",
+        "128 / 256 / 512 GB",
+        "12 MP + 12 MP", 17, "iOS 15"
+      ],
+      [
+        "13-pro", "iPhone 13 Pro", 13, 3699,
+        "6,1″ OLED · até 120 Hz", "A15 Bionic", "6 GB",
+        "128 / 256 / 512 GB / 1 TB",
+        "12 MP + 12 MP + 12 MP · LiDAR", 22, "iOS 15"
+      ],
+      [
+        "13-pro-max", "iPhone 13 Pro Max", 13, 4199,
+        "6,7″ OLED · até 120 Hz", "A15 Bionic", "6 GB",
+        "128 / 256 / 512 GB / 1 TB",
+        "12 MP + 12 MP + 12 MP · LiDAR", 28, "iOS 15"
+      ],
+      [
+        "14", "iPhone 14", 14, 3299,
+        "6,1″ OLED · 60 Hz", "A15 Bionic", "6 GB",
+        "128 / 256 / 512 GB",
+        "12 MP + 12 MP", 20, "iOS 16"
+      ],
+      [
+        "14-plus", "iPhone 14 Plus", 14, 3799,
+        "6,7″ OLED · 60 Hz", "A15 Bionic", "6 GB",
+        "128 / 256 / 512 GB",
+        "12 MP + 12 MP", 26, "iOS 16"
+      ],
+      [
+        "14-pro", "iPhone 14 Pro", 14, 4599,
+        "6,1″ OLED · até 120 Hz", "A16 Bionic", "6 GB",
+        "128 / 256 / 512 GB / 1 TB",
+        "48 MP + 12 MP + 12 MP · LiDAR", 23, "iOS 16"
+      ],
+      [
+        "14-pro-max", "iPhone 14 Pro Max", 14, 5199,
+        "6,7″ OLED · até 120 Hz", "A16 Bionic", "6 GB",
+        "128 / 256 / 512 GB / 1 TB",
+        "48 MP + 12 MP + 12 MP · LiDAR", 29, "iOS 16"
+      ],
+      [
+        "15", "iPhone 15", 15, 3999,
+        "6,1″ OLED · 60 Hz", "A16 Bionic", "6 GB",
+        "128 / 256 / 512 GB",
+        "48 MP + 12 MP", 20, "iOS 17"
+      ],
+      [
+        "15-plus", "iPhone 15 Plus", 15, 4599,
+        "6,7″ OLED · 60 Hz", "A16 Bionic", "6 GB",
+        "128 / 256 / 512 GB",
+        "48 MP + 12 MP", 26, "iOS 17"
+      ],
+      [
+        "15-pro", "iPhone 15 Pro", 15, 5799,
+        "6,1″ OLED · até 120 Hz", "A17 Pro", "8 GB",
+        "128 / 256 / 512 GB / 1 TB",
+        "48 MP + 12 MP + 12 MP · LiDAR", 23, "iOS 17"
+      ],
+      [
+        "15-pro-max", "iPhone 15 Pro Max", 15, 6799,
+        "6,7″ OLED · até 120 Hz", "A17 Pro", "8 GB",
+        "256 / 512 GB / 1 TB",
+        "48 MP + 12 MP + 12 MP · zoom 5x", 29, "iOS 17"
+      ],
+      [
+        "16", "iPhone 16", 16, 4999,
+        "6,1″ OLED · 60 Hz", "A18", "8 GB",
+        "128 / 256 / 512 GB",
+        "48 MP + 12 MP", 22, "iOS 18"
+      ],
+      [
+        "16-plus", "iPhone 16 Plus", 16, 5799,
+        "6,7″ OLED · 60 Hz", "A18", "8 GB",
+        "128 / 256 / 512 GB",
+        "48 MP + 12 MP", 27, "iOS 18"
+      ],
+      [
+        "16-pro", "iPhone 16 Pro", 16, 7499,
+        "6,3″ OLED · até 120 Hz", "A18 Pro", "8 GB",
+        "128 / 256 / 512 GB / 1 TB",
+        "48 MP + 48 MP + 12 MP · zoom 5x", 27, "iOS 18"
+      ],
+      [
+        "16-pro-max", "iPhone 16 Pro Max", 16, 8499,
+        "6,9″ OLED · até 120 Hz", "A18 Pro", "8 GB",
+        "256 / 512 GB / 1 TB",
+        "48 MP + 48 MP + 12 MP · zoom 5x", 33, "iOS 18"
+      ],
+      [
+        "17", "iPhone 17", 17, 6499,
+        "6,3″ OLED · até 120 Hz", "A19", unknown,
+        "256 / 512 GB",
+        "48 MP + 48 MP · frontal 18 MP", 30, "iOS 26"
+      ],
+      [
+        "17-plus", "iPhone 17 Plus", 17, null,
+        unknown, unknown, unknown,
+        unknown, unknown, null, unknown
+      ],
+      [
+        "17-pro", "iPhone 17 Pro", 17, 9999,
+        "6,3″ OLED · até 120 Hz", "A19 Pro", unknown,
+        "256 / 512 GB / 1 TB",
+        "48 MP + 48 MP + 48 MP", 33, "iOS 26"
+      ],
+      [
+        "17-pro-max", "iPhone 17 Pro Max", 17, 10999,
+        "6,9″ OLED · até 120 Hz", "A19 Pro", unknown,
+        "256 / 512 GB / 1 TB / 2 TB",
+        "48 MP + 48 MP + 48 MP", 39, "iOS 26"
+      ],
+      [
+        "18", "iPhone 18", 18, null,
+        unknown, unknown, unknown,
+        unknown, unknown, null, unknown
+      ],
+      [
+        "18-plus", "iPhone 18 Plus", 18, null,
+        unknown, unknown, unknown,
+        unknown, unknown, null, unknown
+      ],
+      [
+        "18-pro", "iPhone 18 Pro", 18, null,
+        unknown, "A20 Pro", unknown,
+        "256 / 512 GB / 1 / 2 TB",
+        "48 MP principal · abertura variável", 36, "iOS 27"
+      ],
+      [
+        "18-pro-max", "iPhone 18 Pro Max", 18, null,
+        unknown, "A20 Pro", unknown,
+        "256 / 512 GB / 1 / 2 TB",
+        "48 MP principal · abertura variável", 45, "iOS 27"
+      ]
+    ];
 
