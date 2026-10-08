@@ -860,3 +860,53 @@ h2 {
   text-align: center;
   padding: 20px 0;
 }
+/* =====================================================
+   DESTAQUES
+   ===================================================== */
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.highlight {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  background: var(--muted);
+  transition: transform 0.2s;
+}
+
+.highlight:hover {
+  transform: translateY(-3px);
+}
+
+.highlight-icon {
+  display: grid;
+  place-items: center;
+  background: var(--background);
+  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+  color: var(--primary);
+  margin-bottom: 18px;
+}
+
+.highlight h3 {
+  font-size: 14px;
+  margin: 0 0 5px;
+}
+
+.highlight strong {
+  font-size: 17px;
+  display: block;
+  margin-bottom: 9px;
+}
+
+.highlight p {
+  font-size: 12px;
+  color: var(--muted-foreground);
+  margin: 0 0 15px;
+}
+
