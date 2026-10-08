@@ -1620,3 +1620,45 @@ dialog::backdrop {
     font-size: 17px;
   }
 }
+
+/* =====================================================
+   CELULARES MUITO ESTREITOS
+   ===================================================== */
+
+@media (max-width: 360px) {
+  .brand {
+    font-size: 12px;
+  }
+
+  .header-action {
+    gap: 2px;
+  }
+
+  .count {
+    width: 20px;
+    height: 20px;
+  }
+
+  h1 {
+    font-size: 34px;
+  }
+
+  .search-sort {
+    flex-wrap: wrap;
+  }
+
+  .search-field,
+  .sort-select {
+    width: 100%;
+    max-width: none;
+  }
+
+  .dock-thumbs {
+    display: none;
+  }
+
+  .detail-header {
+    flex-direction: column;
+    text-align: center;
+  }
+}
