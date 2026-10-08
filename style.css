@@ -978,3 +978,43 @@ h2 {
   color: var(--muted-foreground);
   font-size: 10px;
 }
+/* =====================================================
+   BARRA FLUTUANTE DA COMPARAÇÃO
+   ===================================================== */
+
+.compare-dock {
+  position: fixed;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 11px 13px 11px 24px;
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  background: var(--background);
+  box-shadow: var(--shadow-dock);
+}
+
+.dock-count {
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.dock-thumbs {
+  display: flex;
+  gap: 7px;
+}
+
+.dock-thumbs img {
+  width: 28px;
+  height: 35px;
+  object-fit: contain;
+}
+
+.compare-dock .btn {
+  padding: 9px 18px;
+  font-size: 12px;
+}
