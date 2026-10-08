@@ -809,3 +809,54 @@ h2 {
   width: 16px;
   height: 16px;
 }
+/* =====================================================
+   TABELA COMPARATIVA
+   ===================================================== */
+
+.table-wrap {
+  overflow: auto;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 13px;
+}
+
+.comparison-table th,
+.comparison-table td {
+  text-align: left;
+  padding: 17px 20px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+
+.comparison-table th:first-child,
+.comparison-table td:first-child {
+  width: 23%;
+  color: var(--muted-foreground);
+  font-weight: 400;
+}
+
+.comparison-table thead th {
+  font-weight: 650;
+  font-size: 14px;
+}
+
+.comparison-table tbody tr:nth-child(even) {
+  background: var(--background);
+  background: color-mix(
+    in srgb,
+    var(--background) 65%,
+    transparent
+  );
+}
+
+.comparison-empty {
+  font-size: 13px;
+  color: var(--muted-foreground);
+  text-align: center;
+  padding: 20px 0;
+}
