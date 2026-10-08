@@ -1018,3 +1018,119 @@ h2 {
   padding: 9px 18px;
   font-size: 12px;
 }
+/* =====================================================
+   VOLTAR AO TOPO E MENSAGENS
+   ===================================================== */
+
+.back-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 35;
+  border: 1px solid var(--border);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: var(--foreground);
+  background: var(--background);
+  box-shadow: var(--shadow);
+  display: grid;
+  place-items: center;
+}
+
+.back-top:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.toast {
+  position: fixed;
+  top: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  background: var(--foreground);
+  color: var(--background);
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-size: 13px;
+  max-width: 90%;
+  text-align: center;
+}
+
+/* =====================================================
+   JANELA DE DETALHES
+   ===================================================== */
+
+dialog {
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 32px;
+  width: min(740px, calc(100% - 30px));
+  color: var(--foreground);
+  background: var(--background);
+  max-height: 85vh;
+  overflow: auto;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(5px);
+}
+
+.dialog-close {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+}
+
+.detail-header {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 25px;
+}
+
+.detail-header img {
+  height: 220px;
+  width: 180px;
+  object-fit: contain;
+}
+
+.detail-header h2 {
+  font-size: 28px;
+  margin-top: 12px;
+}
+
+.detail-header p {
+  color: var(--muted-foreground);
+  font-size: 12px;
+}
+
+.spec-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 25px;
+  margin-bottom: 25px;
+}
+
+.spec-item {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.spec-item dt {
+  font-size: 11px;
+  color: var(--muted-foreground);
+}
+
+.spec-item dd {
+  margin: 5px 0 0;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.image-caption {
+  font-size: 10px;
+  color: var(--muted-foreground);
+}
