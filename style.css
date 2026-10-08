@@ -1134,3 +1134,489 @@ dialog::backdrop {
   font-size: 10px;
   color: var(--muted-foreground);
 }
+
+/* =====================================================
+   TELAS GRANDES
+   ===================================================== */
+
+@media (min-width: 1500px) {
+  .hero-inner {
+    min-height: 540px;
+  }
+
+  .hero-photo {
+    object-position: center 48%;
+  }
+}
+
+/* =====================================================
+   TABLETS E NOTEBOOKS MENORES
+   ===================================================== */
+
+@media (max-width: 1100px) {
+  .container {
+    width: calc(100% - 48px);
+  }
+
+  .header-inner {
+    gap: 15px;
+  }
+
+  .brand {
+    font-size: 16px;
+  }
+
+  nav {
+    gap: 20px;
+  }
+
+  .hero-copy {
+    max-width: 430px;
+  }
+
+  h1 {
+    font-size: 45px;
+  }
+
+  .hero-inner {
+    min-height: 470px;
+  }
+
+  .catalog-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .search-sort {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .search-field input {
+    width: 190px;
+  }
+
+  .phone-card {
+    padding: 16px;
+  }
+
+  .card-actions {
+    flex-wrap: wrap;
+  }
+
+  .highlights-grid {
+    gap: 12px;
+  }
+
+  .highlight {
+    padding: 20px;
+  }
+
+  .trust-inner {
+    gap: 35px;
+  }
+}
+
+/* =====================================================
+   CELULARES
+   ===================================================== */
+
+@media (max-width: 760px) {
+  .container {
+    width: calc(100% - 36px);
+  }
+
+  .header-inner {
+    height: 64px;
+    gap: 8px;
+  }
+
+  .brand {
+    font-size: 14px;
+    gap: 7px;
+  }
+
+  .brand svg {
+    width: 17px;
+    height: 24px;
+  }
+
+  .header-action {
+    margin-left: auto;
+    font-size: 0;
+    gap: 4px;
+  }
+
+  .header-action svg {
+    width: 19px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: var(--background);
+    padding: 22px;
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  .hero-inner {
+    min-height: 675px;
+    align-items: flex-start;
+  }
+
+  .hero-copy {
+    padding: 35px 0 0;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .hero-photo {
+    height: 250px;
+    top: auto;
+    bottom: 0;
+    object-fit: cover;
+    object-position: right;
+  }
+
+  h1 {
+    font-size: 38px;
+    margin: 16px 0 14px;
+    max-width: 370px;
+  }
+
+  .hero-copy > p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    max-width: 340px;
+  }
+
+  .eyebrow {
+    font-size: 9px;
+  }
+
+  .hero-note {
+    margin-top: 17px;
+    font-size: 10px;
+  }
+
+  .hero-actions {
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    padding: 11px 18px;
+    font-size: 12px;
+  }
+
+  .trust-inner {
+    gap: 17px;
+    padding: 16px 0;
+    justify-content: space-between;
+    font-size: 10px;
+  }
+
+  .trust-inner > span {
+    gap: 5px;
+  }
+
+  .trust-inner > span:last-child {
+    display: none;
+  }
+
+  .trust-inner svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .section {
+    padding: 38px 0;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  .section-heading {
+    margin-bottom: 22px;
+    gap: 8px;
+  }
+
+  .section-heading p {
+    font-size: 12px;
+    max-width: 250px;
+  }
+
+  .model-count {
+    font-size: 10px;
+    white-space: nowrap;
+  }
+
+  .generations {
+    gap: 6px;
+  }
+
+  .filter {
+    font-size: 11px;
+    padding: 7px 11px;
+  }
+
+  .catalog-toolbar {
+    gap: 18px;
+    margin-bottom: 20px;
+  }
+
+  .search-sort {
+    gap: 8px;
+  }
+
+  .search-field {
+    flex: 1;
+    min-width: 0;
+    padding: 9px;
+  }
+
+  .search-field input {
+    width: 100%;
+    min-width: 0;
+    font-size: 11px;
+  }
+
+  .sort-select {
+    max-width: 144px;
+    font-size: 11px;
+  }
+
+  .catalog-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .phone-card {
+    padding: 13px 12px;
+    border-radius: 15px;
+  }
+
+  .phone-image {
+    height: 166px;
+    margin: 9px 0 5px;
+  }
+
+  .phone-image img {
+    height: 155px;
+  }
+
+  .badge {
+    font-size: 8px;
+    padding: 3px 5px;
+  }
+
+  .card-year {
+    font-size: 9px;
+  }
+
+  .phone-card h3 {
+    font-size: 14px;
+    min-height: 21px;
+  }
+
+  .card-spec {
+    font-size: 9px;
+  }
+
+  .price {
+    font-size: 17px;
+    margin-bottom: 13px;
+  }
+
+  .price-label {
+    margin-top: 12px;
+    font-size: 9px;
+  }
+
+  .price.unknown {
+    font-size: 12px;
+    line-height: 25px;
+  }
+
+  .card-actions {
+    gap: 9px;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 12px;
+  }
+
+  .compare-button {
+    width: 100%;
+    font-size: 10px;
+    padding: 7px 8px;
+  }
+
+  .swatches {
+    margin-bottom: 13px;
+  }
+
+  .catalog-note {
+    font-size: 10px;
+  }
+
+  .comparison-slots {
+    gap: 8px;
+  }
+
+  .comparison-slot {
+    flex-direction: column;
+    text-align: center;
+    padding: 17px 8px;
+    gap: 8px;
+    min-height: 170px;
+    border-radius: 10px;
+  }
+
+  .comparison-slot img {
+    width: 50px;
+    height: 72px;
+  }
+
+  .comparison-slot h3 {
+    font-size: 11px;
+  }
+
+  .comparison-slot p {
+    font-size: 9px;
+  }
+
+  .comparison-slot.empty {
+    font-size: 10px;
+  }
+
+  .comparison-table {
+    min-width: 600px;
+    font-size: 11px;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: 13px 10px;
+  }
+
+  .comparison-table thead th {
+    font-size: 12px;
+  }
+
+  .clear-button {
+    font-size: 10px;
+  }
+
+  .highlights-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .highlight {
+    padding: 18px;
+  }
+
+  .highlight strong {
+    font-size: 15px;
+  }
+
+  .highlight p {
+    font-size: 11px;
+  }
+
+  .highlight h3 {
+    font-size: 12px;
+  }
+
+  .footer-main {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    gap: 18px;
+    font-size: 11px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    font-size: 9px;
+  }
+
+  .compare-dock {
+    gap: 10px;
+    bottom: 12px;
+    max-width: calc(100% - 30px);
+    padding: 9px 10px 9px 15px;
+  }
+
+  .dock-count {
+    font-size: 10px;
+  }
+
+  .dock-thumbs {
+    gap: 3px;
+  }
+
+  .dock-thumbs img {
+    width: 20px;
+    height: 28px;
+  }
+
+  .compare-dock .btn {
+    font-size: 10px;
+    padding: 9px 12px;
+  }
+
+  .back-top {
+    bottom: 75px;
+    right: 14px;
+    width: 35px;
+    height: 35px;
+  }
+
+  .detail-header {
+    gap: 18px;
+  }
+
+  .detail-header img {
+    width: 110px;
+    height: 170px;
+  }
+
+  .detail-header h2 {
+    font-size: 22px;
+  }
+
+  dialog {
+    padding: 24px 20px;
+  }
+
+  .spec-list {
+    gap: 0 16px;
+  }
+
+  .spec-item dd {
+    font-size: 12px;
+  }
+
+  .detail-header .price {
+    font-size: 17px;
+  }
+}
