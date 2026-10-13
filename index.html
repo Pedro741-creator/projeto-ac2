@@ -1049,27 +1049,29 @@
     ];
 
     function specValue(model, key) {
-      if (key === "price") {
-        return money(model.price);
-      }
+  if (key === 'price') {
+    return money(model.price);
+  }
 
-      if (key === "battery") {
-        if (model.battery == null) {
-          return unknown;
-        }
-
-        const regionalNote =
-          model.generation >= 17 ? " (versão eSIM)" : "";
-
-        return `Até model.batteryhoras{regionalNote}`;
-      }
-
-      if (key === "year" && !model.confirmed) {
-        return unknown;
-      }
-
-      return model[key];
+  if (key === 'battery') {
+    if (model.battery == null) {
+      return 'Não confirmado';
     }
+
+    const regionalNote = model.generation >= 17
+      ? ' (versão eSIM)'
+      : '';
+
+    return `Até ${model.battery} horas${regionalNote}`;
+  }
+
+  if (key === 'year' && !model.confirmed) {
+    return 'Não confirmado';
+  }
+
+  return model[key];
+}
+
 
     function renderComparison() {
       const chosen = selected
