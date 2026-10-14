@@ -62,39 +62,6 @@ iPhone Compare Brasil
 ├── script.js
 │
 └── imagens
-    ├── iphone12mini.jpg
-    ├── iphone12.jpg
-    ├── iphone12pro.jpg
-    ├── iphone12promax.jpg
-    ├── iphone13mini.jpg
-    ├── iphone13.jpg
-    ├── iphone13pro.jpg
-    ├── iphone13promax.jpg
-    ├── iphone14.jpg
-    ├── iphone14plus.jpg
-    ├── iphone14pro.jpg
-    ├── iphone14promax.jpg
-    ├── iphone15.jpg
-    ├── iphone15plus.jpg
-    ├── iphone15pro.jpg
-    ├── iphone15promax.jpg
-    ├── iphone16.jpg
-    ├── iphone16plus.jpg
-    ├── iphone16pro.jpg
-    ├── iphone16promax.jpg
-    ├── iphone17.jpg
-    ├── iphone17pro.jpg
-    ├── iphone17promax.jpg
-    ├── iphone18.jpg
-    ├── iphone18pro.jpg
-    └── iphone18promax.jpg
-🚀 Como Executar o Projeto
-Clone este repositório:
-git clone URL_DO_REPOSITORIO
-Abra a pasta do projeto.
-Abra o arquivo index.html no navegador.
-
-Ou utilize a extensão Live Server no Visual Studio Code.
 
 📚 Conceitos Aplicados
 Estruturação de páginas HTML.
