@@ -1716,8 +1716,8 @@ body.dark-mode .hero {
 
 /* Aplica um efeito de escurecimento e inversão na imagem clara do banner */
 body.dark-mode .hero-photo {
-  opacity: 0.35;
-  filter: brightness(0.8) contrast(1.2);
+  opacity: 1;
+  filter: none;
 }
 
 /* Garante legibilidade dos textos da Hero no Modo Escuro */
@@ -1767,3 +1767,65 @@ body.dark-mode nav > a.active {
   color: var(--primary);
 }
 
+/* =========================================
+   BANNER NO MODO ESCURO
+   Fundo escuro + iPhones com cores originais
+   ========================================= */
+
+body.dark-mode .hero {
+  position: relative;
+  isolation: isolate;
+  background: #08090c;
+}
+
+/* Mantém a imagem original dos iPhones colorida */
+body.dark-mode .hero-photo {
+  opacity: 1;
+  filter: none;
+}
+
+/* Escurece somente o lado esquerdo do banner */
+body.dark-mode .hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    #08090c 0%,
+    #08090c 25%,
+    rgba(8, 9, 12, 0.95) 35%,
+    rgba(8, 9, 12, 0.75) 45%,
+    rgba(8, 9, 12, 0.25) 58%,
+    transparent 72%
+  );
+}
+
+/* Mantém os textos e botões acima da camada escura */
+body.dark-mode .hero-inner {
+  position: relative;
+  z-index: 2;
+}
+
+/* Textos legíveis sobre o fundo preto */
+body.dark-mode .hero-copy h1 {
+  color: #ffffff;
+}
+
+body.dark-mode .hero-copy > p,
+body.dark-mode .eyebrow,
+body.dark-mode .hero-note {
+  color: #b8bdc7;
+}
+
+/* Fundo escuro da barra inferior */
+body.dark-mode .trust-bar {
+  background: #101115;
+  border-color: #303139;
+}
+
+body.dark-mode .trust-inner {
+  color: #c3c7d0;
+}
