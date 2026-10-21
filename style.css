@@ -1678,5 +1678,92 @@ dialog::backdrop {
     transition: none !important;
   }
 }
+/* =========================================
+   CORES DO MODO ESCURO
+   ========================================= */
 
+body.dark-mode {
+  --background: #18181b;
+  --foreground: #f5f5f7;
+
+  --muted: #242428;
+  --muted-foreground: #b0b0b8;
+
+  --primary: #2997ff;
+  --primary-hover: #50a7ff;
+  --primary-foreground: #ffffff;
+
+  --accent: #263b52;
+  --border: #3b3b42;
+
+  --warning: #f0c674;
+
+  --shadow: 0 8px 26px rgba(0, 0, 0, 0.25);
+  --shadow-hover: 0 13px 32px rgba(0, 0, 0, 0.4);
+  --shadow-dock: 0 6px 35px rgba(0, 0, 0, 0.5);
+}
+
+/* Fundo dos campos e controles no modo escuro */
+body.dark-mode input,
+body.dark-mode select {
+  color-scheme: dark;
+}
+
+/* AJUSTE DA HERO / BANNER NO MODO ESCURO */
+body.dark-mode .hero {
+  background: var(--background);
+}
+
+/* Aplica um efeito de escurecimento e inversão na imagem clara do banner */
+body.dark-mode .hero-photo {
+  opacity: 0.35;
+  filter: brightness(0.8) contrast(1.2);
+}
+
+/* Garante legibilidade dos textos da Hero no Modo Escuro */
+body.dark-mode .hero-copy h1 {
+  color: #ffffff;
+}
+
+body.dark-mode .hero-copy > p,
+body.dark-mode .eyebrow,
+body.dark-mode .hero-note {
+  color: var(--muted-foreground);
+}
+
+/* Transição suave entre os temas */
+body,
+.site-header,
+.site-footer,
+.phone-card,
+.comparison-section,
+.comparison-slot,
+.highlight,
+dialog,
+.theme-toggle,
+.hero-photo {
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    opacity 0.25s ease,
+    filter 0.25s ease;
+}
+
+/* CORREÇÃO DO CABEÇALHO NO MODO ESCURO */
+body.dark-mode .site-header {
+  background: rgba(24, 24, 27, 0.92);
+  border-bottom-color: var(--border);
+}
+
+body.dark-mode .brand,
+body.dark-mode nav > a,
+body.dark-mode .header-action {
+  color: var(--foreground);
+}
+
+body.dark-mode nav > a:hover,
+body.dark-mode nav > a.active {
+  color: var(--primary);
+}
 
