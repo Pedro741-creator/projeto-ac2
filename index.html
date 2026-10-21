@@ -76,13 +76,12 @@
   <main>
     <!-- BANNER PRINCIPAL -->
     <section class="hero" id="inicio">
-      <img
-        class="hero-photo"
-        src="https://id-preview--e52d31b9-c169-5640-92e9-8c528189f975.lovable.app/__l5e/assets-v1/2ebca561-fa2a-4c3c-8865-ed2815634c4b/iphone-banner.jpg"
-        alt="Composição ilustrativa de iPhones em acabamento metálico"
-        width="1920"
-        height="1024"
-      >
+      <img class="hero-photo"
+  src="images/iphone-banner.png"
+  alt="Composição ilustrativa de iPhones em acabamento metálico"
+  width="1920"
+  height="1024"
+>
 
       <div class="container hero-inner">
         <div class="hero-copy">
@@ -684,111 +683,59 @@ const rows = [
     "48 MP Fusion principal + 48 MP ultra-angular · frontal Center Stage de 18 MP", 31, "iOS 27"
   ]
 ];
-/* =====================================================
-       3. IMAGENS PÚBLICAS
 
-       Cada card e janela de detalhes recebe uma imagem.
-       Algumas variantes compartilham a foto da família.
-       Modelos não confirmados usam imagem ilustrativa.
+    /* =====================================================
+       3. IMAGENS LOCAIS
+
+       As imagens ficam armazenadas na pasta "images".
+       Cada modelo utiliza seu próprio arquivo local.
+       Os nomes das chaves são mantidos para preservar
+       o funcionamento dos cards e das janelas de detalhes.
        ===================================================== */
 
     const images = {
       // iPhone 12
-      "12":
-        "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111876_sp830-iphone12-ios14-2x.png",
-
-      "12-mini":
-        "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111877_sp829-iphone12mini--ios14.png",
-
-      "12-pro":
-        "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111875_iphone12pro-ios14.png",
-
-      "12-pro-max":
-        "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111875_iphone12pro-ios14.png",
+      "12": "images/iphone-12.png",
+      "12-mini": "images/iphone-12-mini.png",
+      "12-pro": "images/iphone-12-pro.png",
+      "12-pro-max": "images/iphone-12-pro-max.png",
 
       // iPhone 13
-      "13":
-        "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111872_iphone13-colors-480.png",
-
-      "13-mini":
-        "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111872_iphone13-mini-colors-480.png",
-
-      "13-pro":
-        "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111871_iphone13-pro-colors-480.png",
-
-      "13-pro-max":
-        "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111870_iphone13-pro-max-colors-480.png",
+      "13": "images/iphone-13.png",
+      "13-mini": "images/iphone-13-mini.png",
+      "13-pro": "images/iphone-13-pro.png",
+      "13-pro-max": "images/iphone-13-pro-max.png",
 
       // iPhone 14
-      "14":
-        "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111850_iphone-14_1.png",
-
-      "14-plus":
-        "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111850_iphone-14_1.png",
-
-      "14-pro":
-        "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111846_sp875-sp876-iphone14-pro-promax.png",
-
-      "14-pro-max":
-        "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111846_sp875-sp876-iphone14-pro-promax.png",
+      "14": "images/iphone-14.png",
+      "14-plus": "images/iphone-14-plus.png",
+      "14-pro": "images/iphone-14-pro.png",
+      "14-pro-max": "images/iphone-14-pro-max.png",
 
       // iPhone 15
-      "15":
-        "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/iphone_15_hero.png",
-
-      "15-plus":
-        "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/iphone_15_plus_hero.png",
-
-      "15-pro":
-        "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/iphone_15_pro.png",
-
-      "15-pro-max":
-        "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/iphone-15-pro-max.png",
+      "15": "images/iphone-15.png",
+      "15-plus": "images/iphone-15-plus.png",
+      "15-pro": "images/iphone-15-pro.png",
+      "15-pro-max": "images/iphone-15-pro-max.png",
 
       // iPhone 16
-      "16":
-        "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/iphone-16.png",
-
-      "16-plus":
-        "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/121030-iphone-16-plus.png",
-
-      "16-pro":
-        "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/121031-iphone-16-pro.png",
-
-      "16-pro-max":
-        "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/121032-iphone-16-pro-max.png",
+      "16": "images/iphone-16.png",
+      "16-plus": "images/iphone-16-plus.png",
+      "16-pro": "images/iphone-16-pro.png",
+      "16-pro-max": "images/iphone-16-pro-max.png",
 
       // iPhone 17
-      "17":
-        "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/iphone-17-hero.png",
-
-     "17-air":
-     "https://cdn.awsli.com.br/2500x2500/2549/2549769/produto/370865568/01-q46gr6zmny.png",
-      
-     "17-pro":
-        "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/iphone-17-pro-17-pro-max-hero.png",
-
-      "17-pro-max":
-        "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/iphone-17-pro-17-pro-max-hero.png",
+      "17": "images/iphone-17.png",
+      "17-air": "images/iphone-17-air.png",
+      "17-pro": "images/iphone-17-pro.png",
+      "17-pro-max": "images/iphone-17-pro-max.png",
 
       // iPhone 18
-      "18-pro":
-        "https://acdn-us.mitiendanube.com/stores/003/573/118/products/iphone18pro_todosjuntos-241be18f08869adae017889883430204-1024-1024.webp",
-
-      "18-pro-max":
-        "https://acdn-us.mitiendanube.com/stores/003/573/118/products/iphone18pro_todosjuntos-241be18f08869adae017889883430204-1024-1024.webp",
-      
-        "18-duo":
-  "https://www.iplace.com.br/ccstore/v1/images/?source=/file/v1664171239699092886/products/100086008.00.639245921621978773-100086008.00.jpg&width=504&height=504",
+      "18-pro": "images/iphone-18-pro.pn",
+      "18-pro-max": "images/iphone-18-pro-max.png",
+      "18-duo": "images/iphone-18-duo.png"
     };
 
-
-        // Fotos compartilhadas entre variantes da mesma família.
-    images["12-pro-max"] = images["12-pro"];
-    images["14-plus"] = images["14"];
-    images["14-pro-max"] = images["14-pro"];
-    images["17-pro-max"] = images["17-pro"];
-    images["18-pro-max"] = images["18-pro"];
 
     // Remover modelos que não fazem parte do catálogo.
     delete images["17-plus"];
@@ -969,15 +916,17 @@ const rows = [
               </span>
             </div>
 
-            <div class="phone-image">
+<div class="phone-image">
               <img
                 src="${model.image}"
                 alt="${imageDescription}"
                 loading="lazy"
                 width="260"
                 height="190"
+                onerror="this.src='images/iphone-12.png'"
               >
             </div>
+            <!-- Fechamento extra removido: .phone-image já foi fechado acima. -->
 
             <div class="swatches" aria-hidden="true">
               <span class="swatch dark"></span>
@@ -1598,7 +1547,6 @@ themeToggle.addEventListener("click", function () {
 
   setTheme(!isDark);
 });
-
   </script>
 </body>
 </html>
